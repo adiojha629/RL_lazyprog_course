@@ -12,9 +12,12 @@ class Bandit():
         self.winrate = winrate
     def pull_arm(self) -> int:
         return 0 if random.uniform(0,1)>self.winrate else 1
+    def __str__(self):
+        return"I am a bandit with winrate " + str(self.winrate)
 '''
-x = Bandit(.5)
+x = Bandit(0)
 counter = 0
 for _ in range(100):
     counter += x.pull_arm()
-print(counter/100)'''
+print(counter/100)
+'''
